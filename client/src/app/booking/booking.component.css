@@ -1,0 +1,20 @@
+
+#map
+{
+  height: 80vh;
+}
+
+.map-container
+{
+  padding-bottom: 5%;
+}
+
+
+.detailPanel
+{
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+}
+
+

@@ -1,0 +1,12 @@
+How to use
+----------
+    Step 1 : Run the mongoDB script -- "public>javascripts>online_cab_booking_mongo.js" via "mongo < online_cab_booking_mongo.js" after navigating to mentioned directory.
+
+    Step 2 : Run "npm install" inside main project-folder to install server-dependencies.
+
+    step 3 : Run "npm start" to start the server.
+
+    Step 4 : Open a new terminal and "cd client" > Run "npm install" to install client-dependencies.
+
+    Step 5 : Run "ng serve" to start the app.
+

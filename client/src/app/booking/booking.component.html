@@ -1,0 +1,75 @@
+
+<div class="row">
+
+  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 map-container">
+    <div id="map">
+    </div>
+  </div>
+
+  <form class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"  #f="ngForm" [hidden]="!detailsEntered">
+    <div id="detail-panel" style="padding: 10%;" class="well well-lg" [hidden]="!this.driverRoute.length">
+      <strong style="font-size: medium;text-decoration: underline;"> Your Journey Details ({{f1.value.startLocation}} to {{f1.value.destination}})</strong>
+        <br><br>
+        <b>Driver Name : </b>{{this.driverName}}<br>
+        <b>Driver Contact Number : </b>{{this.driverContact}}<br>
+        <b>Total Distance : </b>{{this.driverDistance}}<br>
+        <b>Total Fare : </b>{{this.driverFare}}<br>
+        <div id="journeyInfo" ></div>
+    </div>
+    <div id="no-detail-panel" style="padding: 10%;" class="well well-lg" [hidden]="this.driverRoute.length">
+      <strong style="font-size: medium;"> No Cars Found </strong>
+    </div>
+    <br>
+    <div id="detail-panel-2" style="padding: 10%;" class="well well-lg">
+      <strong style="font-size: medium;text-decoration: underline;"> Your Personal Details</strong>
+        <br><br>
+        <b>Name : </b>{{f1.value.name}}<br>
+        <b>Email : </b>{{f1.value.email}}<br>
+        <b>Contact Number : </b>{{f1.value.telephone}}<br>
+        <div id="personalInfo" ></div>
+    </div>
+  </form>
+
+  <form class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"  #f1="ngForm" [hidden]="detailsEntered">
+    <div class="row-custom">
+      <label for="name" class="sr-only">
+        Name
+      </label>
+      <input type="text" class="form-control" id="name" placeholder="Enter name" ngModel name="name" required>
+    </div>
+    <br>
+    <div class="row-custom">
+      <label for="email" class="sr-only">
+        Email
+      </label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" ngModel name="email" required>
+    </div>
+    <br>
+    <div class="row-custom">
+      <label for="telephone" class="sr-only">
+        Contact Number
+      </label>
+      <input type="tel" pattern="\d{10}" class="form-control" id="telephone" placeholder="Contact Number (ex: 0112345678)" ngModel name="telephone" title="Contact Number" required>
+    </div>
+    <br>
+    <div class="row-custom">
+      <label for="startLocation" class="sr-only">
+        From
+      </label>
+      <input type="text" class="form-control" id="startLocation" placeholder="From" ngModel name="startLocation" required>
+    </div>
+    <br>
+    <div class="row-custom">
+      <label for="destination" class="sr-only">
+        Destination
+      </label>
+      <input type="text" class="form-control" id="destination" placeholder="Destination" ngModel name="destination" required>
+    </div>
+    <br>
+    <div class="row-custom">
+      <button type="submit" class="btn btn-block btn-primary" (click)="bookCab(f1)" [disabled]="!f1.valid">Book</button>
+    </div>
+  </form>
+
+</div>
+
